@@ -1,0 +1,13 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor.error{
+    display: flex;
+    justify-content: center;
+    p{
+        align-items: center;
+    }
+    .error404{
+        min-width: 28rem;
+    }
+}

@@ -1,0 +1,195 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use "sass:color";
+
+.table-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 100%; /* Adjust as needed */
+  max-width: 100%; 
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 87rem;
+  }
+  .table__thead {
+    background-color: v.$primario;
+    color: v.$blanco;
+    text-align: center;
+  }
+
+  tbody{
+    text-align: center;
+  }
+
+  .table__tbody{
+    text-align: center;
+    tr{
+      text-align: center;
+      &:hover{
+        background-color: #e7e5e5;
+      }
+    }
+  }
+
+  .table__th {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .table__th, .table__td, .table__td--acciones{
+    border: 1px solid rgba(136, 136, 136, 0.2);
+  }
+
+  .table__td, .table__td--acciones {
+    padding: 1.5rem 1rem;
+  }
+
+  .table_plantilla_eliminar{
+    height: 21vh;
+    font-size: 2rem;
+    button{
+      font-size: 1.6rem;
+    }
+  }
+
+@include m.tablet{
+    .table__td--acciones{
+        display: flex;
+        justify-content: center;
+        gap: 1.3rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    
+}
+
+.dashboard__contenedor{
+  margin-top:2rem;
+}
+
+  .table__accion {
+    all: unset;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .table__accion--editar {
+    color: #007df4;
+  }
+  .table__accion--eliminar {
+    color: rgb(169, 0, 0);
+  }
+  .table__accion:hover {
+    cursor: pointer;
+  }
+  
+  .paginacion {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    margin-right: 3rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    .paginacion {
+      justify-content: flex-end;
+    }
+  }
+  .paginacion__enlace {
+    color: #007df4;
+    font-size: 1.6rem;
+  }
+  .paginacion__enlace--texto {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #007df4;
+  }
+  .paginacion__enlace--texto:hover {
+    background-color: v.$azul;
+    color: v.$blanco;
+  }
+  .paginacion__enlace--numero {
+    font-weight: 700;
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .paginacion__enlace--numero {
+      display: inline;
+    }
+  }
+  .paginacion__enlace--actual {
+    padding: 0.5rem 2rem;
+    display: none;
+    border-radius: 0.6rem;
+    color:v.$blanco;
+    background: color.adjust(v.$azul, $lightness: 8%);
+    font-weight: 700;
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .paginacion__enlace--actual {
+      display: inline;
+    }
+  }
+
+  .color-status{
+    padding: .5rem;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    text-transform:capitalize;
+    cursor: pointer;
+    &.vigente{
+        background-color: v.$verde;
+    }
+    &.anulado{
+        background-color: v.$rojo;
+    }
+  }
+
+  .text__capit{
+    text-transform: capitalize;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    max-width: 300px;
+    background-color: #f1f1f1;
+    margin: 0 0 15px 15px;
+    @include m.tablet{
+      margin: 0 0 15px 45px;
+  }
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 2px;
+    font-size: 16px;
+    border-radius: 25px;
+    background: transparent;
+}
+
+.icon-search {
+    margin-right: 10px;
+    color: #aaa;
+    font-size: 18px;
+}
+
+.table__formulario{
+  margin-top:1rem;
+  @include m.tablet{
+    margin-top: 0;
+}
+}

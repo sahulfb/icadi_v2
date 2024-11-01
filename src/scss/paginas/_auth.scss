@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.auth{
+    @include m.contenedor-sm;
+}
+
+.auth__texto{
+    font-size: 2rem;
+}
+
+.acciones{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .__register{
+    margin: 1rem 0;
+  }
+}

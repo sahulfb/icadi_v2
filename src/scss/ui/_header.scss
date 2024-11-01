@@ -1,0 +1,100 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use "sass:color";
+
+.header {
+    padding: 1.5rem 2rem;
+    top: 0;
+    left:0;
+    width: 100%;
+    z-index: 10;
+	margin: 0;
+    transition: 0.5s;
+    background-color: v.$blanco;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+    &__contenedor{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__contenido{
+            &--iqz{
+                h3{
+                    margin:0;
+                    color:v.$azul;
+                }
+            }
+    }
+
+
+
+    &__navegacion{
+        background-color: #ecebeb;
+  padding: .4rem .6rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: .5rem;
+        .header__enlace{
+           background-color: #0e267c;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            color: #eee;
+        }
+        .header__submit{
+            all:unset;
+            cursor: pointer !important;
+            padding: .5rem;
+            border-radius: .5rem;
+            &:hover{
+                background-color: color.adjust(#eee, $lightness: -7%);
+            }
+        }
+
+        .login{
+            background-color: v.$primario;
+            color: #fff;
+            border-radius: 0.5rem;
+        }
+    }
+
+    &__logo{
+        margin:0;
+    }
+
+    &__menu-hambugesa{
+        cursor: pointer;
+    }
+}
+
+.panel{
+    &__header{
+        @extend .header;
+        background-color: transparent;
+        box-shadow: none;
+        padding: .5rem .8rem;
+    }
+    &__contenedor{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: v.$blanco;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 1rem 2rem;
+        border-radius: 0.6rem;
+        a h3{
+            margin:0;
+        }
+    }
+
+    &__menu-hamburguesa{
+        cursor:pointer;
+        transition:.4s ease-in-out;
+        @include m.tablet{
+            display: none;
+        }
+    }
+}

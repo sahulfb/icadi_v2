@@ -1,0 +1,46 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+body {
+    font-family: v.$fuente_principal;
+    font-size: 1.8rem;
+    background-color: v.$gris-claro;
+    display: flex;
+    flex-direction: column;
+    overflow: -moz-scrollbars-vertical;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content, body{
+    display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color:v.$azul;
+}
+img {
+    height: auto;
+}

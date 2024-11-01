@@ -1,0 +1,48 @@
+@use 'base/variables' as v;
+@use "sass:color";
+
+.alerta {
+    padding: 1.5rem 1.5rem 1.5rem 3rem;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    font-weight: v.$bold;
+    
+    &__error {
+        background-color: color.adjust(v.$rojo, $lightness: 45%);
+        border-left: v.$rojo solid .5rem;
+        color: v.$rojo;
+    }
+
+    &__exito {
+        background-color: color.adjust(v.$verde, $lightness: 40%);
+        border-left: v.$verde solid .5rem;
+        color: color.adjust(v.$verde, $lightness: -20%);
+    }
+
+    &__pas {
+        @extend .alerta__error;
+    }
+}
+
+.swal2-container.swal2-center>.swal2-popup {
+    min-width: 40%;
+    height: 80%;
+}
+
+.swal2-title {
+    font-size: 3rem !important;
+}
+
+.swal2-html-container {
+    font-size: 1.8rem !important;
+}
+
+.swal2-confirm.swal2-styled {
+    font-size: 1.4rem !important;
+}
+
+.cancel-button-class {
+    font-size: 1.2rem !important;
+    padding: 8px 18px;
+}
